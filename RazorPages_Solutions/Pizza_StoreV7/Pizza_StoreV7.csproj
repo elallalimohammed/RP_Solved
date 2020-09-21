@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Pizzas\CreatePizza.cshtml" />
+    <None Include="Pages\Pizzas\DeletePizza.cshtml" />
+    <None Include="Pages\Pizzas\EditPizza.cshtml" />
+    <None Include="Pages\Pizzas\GetAllPizzas.cshtml" />
+  </ItemGroup>
+
+</Project>

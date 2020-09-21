@@ -1,0 +1,30 @@
+{
+  "2": {
+    "Id": 2,
+    "Name": "Vegetable",
+    "Description": "a lot of begetables",
+    "Price": 55.0,
+    "ImageName": "Vegetable_pizza.jfif"
+  },
+  "3": {
+    "Id": 3,
+    "Name": "Vegetarian",
+    "Description": "no description",
+    "Price": 77.0,
+    "ImageName": "Chicken_pizza.jfif"
+  },
+  "45": {
+    "Id": 45,
+    "Name": "Vegetarian",
+    "Description": "no description",
+    "Price": 77.0,
+    "ImageName": "Bufalla_piza.jfif"
+  },
+  "78": {
+    "Id": 78,
+    "Name": "Vegetarian",
+    "Description": "no description",
+    "Price": 77.0,
+    "ImageName": "Bufalla_piza.jfif"
+  }
+}
