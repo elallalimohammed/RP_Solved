@@ -13,6 +13,7 @@ namespace Pizza_StoreV9.Helpers
         public static Dictionary<int, Pizza> ReadJson(string JsonFileName)
         {
             string jsonString = File.ReadAllText(JsonFileName);
+
             return JsonConvert.DeserializeObject<Dictionary<int,Pizza>>(jsonString);
         }
     }

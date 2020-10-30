@@ -27,7 +27,7 @@ namespace Pizza_StoreV8.Services
 
         public void DeletePizza(Pizza pizza)
         {
-            throw new NotImplementedException();
+            // no implementation yet;
         }
 
         
@@ -47,12 +47,13 @@ namespace Pizza_StoreV8.Services
 
         public Pizza GetPizza(int id)
         {
-            throw new NotImplementedException();
+            // no implementation yet
+            return new Pizza();
         }
 
         public void UpdatePizza(Pizza pizza)
         {
-            throw new NotImplementedException();
+            //no implementation yet
         }
     }
 }

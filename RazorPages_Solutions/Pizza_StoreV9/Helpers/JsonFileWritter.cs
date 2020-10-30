@@ -1,4 +1,5 @@
-﻿using Pizza_StoreV9.Models;
+﻿using Newtonsoft.Json;
+using Pizza_StoreV9.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,8 @@ namespace Pizza_StoreV9.Helpers
     {
         public static void WriteToJson(Dictionary<int, Pizza> pizzas, string JsonFileName)
         {
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(pizzas, Newtonsoft.Json.Formatting.Indented);
+            string output = JsonConvert.SerializeObject(pizzas,Formatting.Indented);
+
             File.WriteAllText(JsonFileName, output);
         }
     }

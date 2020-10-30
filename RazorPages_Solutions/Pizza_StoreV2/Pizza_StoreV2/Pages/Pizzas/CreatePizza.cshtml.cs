@@ -12,6 +12,7 @@ namespace Pizza_StoreV2
     public class CreatePizzaModel : PageModel
     {
         private PizzaCatalog catalog;
+        
         [BindProperty]
         public Pizza Pizza { get; set; }
         public CreatePizzaModel()
