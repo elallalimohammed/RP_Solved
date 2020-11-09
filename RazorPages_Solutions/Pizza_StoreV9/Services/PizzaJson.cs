@@ -10,7 +10,7 @@ namespace Pizza_StoreV9.Services
 {
     public class PizzaJson : IPizzaRepository
     {
-        string JsonFileName = @"C:\Users\EASJ\Source\Repos\RazorPages_Exercises_Solutions\RazorPages_Solutions\Pizza_StoreV9\Data\JsonPizzas.json";
+        string JsonFileName = @"C:\Users\EASJ\Source\Repos\RP_Solved\RazorPages_Solutions\Pizza_StoreV9\Data\JsonPizzas.json";
 
         public void AddPizza(Pizza pizza)
         {
@@ -23,21 +23,6 @@ namespace Pizza_StoreV9.Services
         {
             return JsonFileReader.ReadJson(JsonFileName);
         }
-
-        public void DeletePizza(int id)
-        {
-            Dictionary<int, Pizza> pizzas = AllPizzas();
-            foreach( var p in pizzas.Values)
-            {
-                if (p.Id == id)
-                {
-                    pizzas.Remove(id);
-                    break;
-                }
-            }
-            JsonFileWritter.WriteToJson(pizzas, JsonFileName);
-        }
-
         public Dictionary<int, Pizza> FilterPizza(string criteria)
         {
             Dictionary<int, Pizza> pizzas = AllPizzas();
@@ -68,6 +53,13 @@ namespace Pizza_StoreV9.Services
             foundPizza.Description = pizza.Description;
             foundPizza.Price = pizza.Price;
             foundPizza.ImageName = pizza.ImageName;
+            JsonFileWritter.WriteToJson(pizzas, JsonFileName);
+        }
+
+        public void DeletePizza(int id)
+        {
+            Dictionary<int, Pizza> pizzas = AllPizzas();
+            pizzas.Remove(id);
             JsonFileWritter.WriteToJson(pizzas, JsonFileName);
         }
     }

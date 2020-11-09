@@ -49,39 +49,17 @@ namespace Pizza_StoreV1.PizzaCatalogs
 
         public Pizza GetPizza(int id)
         {
-            foreach( var p in pizzas)
-            {
-                if (p.Key == id)
-                    return p.Value;              
-            }
-            return new Pizza();
+            return pizzas[id];
         }
 
         public void UpdatePizza(Pizza pizza)
         {
-            foreach( var p in pizzas.Values)
-            {
-                if (p.Id == pizza.Id)
-                {
-                    p.Name = pizza.Name;
-                    p.ImageName = pizza.ImageName;
-                    p.Price = pizza.Price;
-                    p.Description = pizza.Description;
-                }
-            }
-
+            pizzas[pizza.Id] = pizza;
         }
 
         public void DeletePizza(int id)
         {
-            foreach (var p in pizzas.Values)
-            {
-                if (p.Id == id)
-                {
-                    pizzas.Remove(id);
-                }
-            }
-
+            pizzas.Remove(id);
         }
     }
 }

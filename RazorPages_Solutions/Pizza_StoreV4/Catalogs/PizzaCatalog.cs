@@ -60,13 +60,18 @@ namespace Pizza_StoreV4.PizzaCatalogs
 
         public Pizza GetPizza(int id)
         {
-            //foreach (var p in pizzas)
-            //{
-            //    if (p.Key == id)
-            //        return p.Value;
-            //}
-            //return new Pizza();
             return pizzas[id];
+        }
+
+        //Another solution less performant
+        public Pizza GetPizza2(int id)
+        {
+            foreach (var p in pizzas)
+            {
+                if (p.Key == id)
+                    return p.Value;
+            }
+            return new Pizza();
         }
 
         // more performant version

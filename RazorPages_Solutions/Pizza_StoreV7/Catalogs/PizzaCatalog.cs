@@ -50,17 +50,29 @@ namespace Pizza_StoreV7.PizzaCatalogs
 
         public Pizza GetPizza(int id)
         {
-            foreach( var p in pizzas)
+            return pizzas[id];
+        }
+
+        //another solution less performant
+        public Pizza GetPizza2(int id)
+        {
+            foreach (var p in pizzas)
             {
                 if (p.Key == id)
-                    return p.Value;              
+                    return p.Value;
             }
             return new Pizza();
         }
 
         public void UpdatePizza(Pizza pizza)
         {
-            foreach( var p in pizzas.Values)
+            pizzas[pizza.Id] = pizza;
+        }
+
+        //another version less performant
+        public void UpdatePizza2(Pizza pizza)
+        {
+            foreach (var p in pizzas.Values)
             {
                 if (p.Id == pizza.Id)
                 {
@@ -70,10 +82,16 @@ namespace Pizza_StoreV7.PizzaCatalogs
                     p.Description = pizza.Description;
                 }
             }
-
         }
 
+        // more performant solution
         public void DeletePizza(Pizza pizza)
+        {
+            pizzas.Remove(pizza.Id);
+        }
+
+        //less performant solution
+        public void DeletePizza2(Pizza pizza)
         {
             foreach (var p in pizzas.Values)
             {
@@ -82,7 +100,6 @@ namespace Pizza_StoreV7.PizzaCatalogs
                     pizzas.Remove(p.Id);
                 }
             }
-
         }
     }
 }
