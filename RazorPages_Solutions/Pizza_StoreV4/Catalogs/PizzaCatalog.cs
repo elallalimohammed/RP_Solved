@@ -90,11 +90,16 @@ namespace Pizza_StoreV4.PizzaCatalogs
                     p.Description = pizza.Description;
                 }
             }
-
         }
 
-
+        // more performant solution
         public void DeletePizza(Pizza pizza)
+        {
+                    pizzas.Remove(pizza.Id);        
+        }
+
+        //less performant solution
+        public void DeletePizza2(Pizza pizza)
         {
             foreach (var p in pizzas.Values)
             {
