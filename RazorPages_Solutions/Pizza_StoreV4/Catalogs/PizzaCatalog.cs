@@ -68,9 +68,19 @@ namespace Pizza_StoreV4.PizzaCatalogs
             return new Pizza();
         }
 
+        
+
+        // more performant version
         public void UpdatePizza(Pizza pizza)
         {
-            foreach( var p in pizzas.Values)
+           pizzas[pizza.Id]= pizza;
+               
+        }
+
+        //another version less performant
+        public void UpdatePizza2(Pizza pizza)
+        {
+            foreach (var p in pizzas.Values)
             {
                 if (p.Id == pizza.Id)
                 {
@@ -82,6 +92,7 @@ namespace Pizza_StoreV4.PizzaCatalogs
             }
 
         }
+
 
         public void DeletePizza(Pizza pizza)
         {
