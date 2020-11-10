@@ -19,7 +19,6 @@ namespace Pizza_StoreV3.PizzaCatalogs
             pizzas.Add(4, new Pizza() { Id = 4, Name = "Mozzarella_pizza", Description = " Maden of mozzarella", Price = 77, ImageName = "Mozzarella_pizza.jfif" });
             pizzas.Add(5, new Pizza() { Id = 5, Name = "Vegetable_pizza", Description = " Maden of vegetars", Price = 88, ImageName = "Vegetable_pizza.jfif" });
         }
-
         public static PizzaCatalog Instance
         {
             get
@@ -31,7 +30,6 @@ namespace Pizza_StoreV3.PizzaCatalogs
                 return _instance;
             }
         }
-
         public Dictionary<int,Pizza> AllPizzas()
         {
             return pizzas;

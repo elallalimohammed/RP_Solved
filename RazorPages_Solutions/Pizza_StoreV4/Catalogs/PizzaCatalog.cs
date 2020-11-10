@@ -74,14 +74,16 @@ namespace Pizza_StoreV4.PizzaCatalogs
             return new Pizza();
         }
 
-        // more performant version
+        //A more performant version
         public void UpdatePizza(Pizza pizza)
         {
-           pizzas[pizza.Id]= pizza;
-               
+            if (pizza != null)
+            {
+                pizzas[pizza.Id] = pizza;
+            }            
         }
 
-        //another version less performant
+        //Another version less performant
         public void UpdatePizza2(Pizza pizza)
         {
             foreach (var p in pizzas.Values)
@@ -96,13 +98,17 @@ namespace Pizza_StoreV4.PizzaCatalogs
             }
         }
 
-        // more performant solution
+        //A more performant solution
         public void DeletePizza(Pizza pizza)
         {
-                    pizzas.Remove(pizza.Id);        
+            if (pizza != null)
+            {
+                pizzas.Remove(pizza.Id);
+            }
+                      
         }
 
-        //less performant solution
+        //A less performant solution
         public void DeletePizza2(Pizza pizza)
         {
             foreach (var p in pizzas.Values)
@@ -112,7 +118,6 @@ namespace Pizza_StoreV4.PizzaCatalogs
                     pizzas.Remove(p.Id);
                 }
             }
-
         }
     }
 }

@@ -10,8 +10,7 @@ namespace Pizza_StoreV7.PizzaCatalogs
 {
     public class PizzaCatalog:IPizzaRepository
     {
-        private Dictionary<int, Pizza> pizzas { get; }
-        
+        private Dictionary<int, Pizza> pizzas { get; }     
         public PizzaCatalog()
         {
             pizzas = new Dictionary<int, Pizza>();

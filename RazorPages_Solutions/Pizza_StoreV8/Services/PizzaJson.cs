@@ -24,13 +24,7 @@ namespace Pizza_StoreV8.Services
         {
             return JsonFileReader.ReadJson(JsonFileName);
         }
-
-        public void DeletePizza(Pizza pizza)
-        {
-            // no implementation yet;
-        }
-
-        
+       
         public Dictionary<int, Pizza> FilterPizza(string criteria)
         {
             Dictionary<int, Pizza> pizzas = AllPizzas();
@@ -56,5 +50,10 @@ namespace Pizza_StoreV8.Services
         {
             //no implementation yet
         }
+        public void DeletePizza(Pizza pizza)
+        {
+            // no implementation yet;
+        }
+
     }
 }

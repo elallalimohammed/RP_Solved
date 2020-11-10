@@ -48,9 +48,9 @@ namespace Pizza_StoreV8.PizzaCatalogs
             return myPizzas;
         }
 
+        // A more performant solution
         public Pizza GetPizza(int id)
         {
-
             return pizzas[id];
         }
 
@@ -67,7 +67,10 @@ namespace Pizza_StoreV8.PizzaCatalogs
 
         public void UpdatePizza(Pizza pizza)
         {
-            pizzas[pizza.Id] = pizza;
+            if (pizza != null)
+            {
+                pizzas[pizza.Id] = pizza;
+            }         
         }
 
         //another version less performant
@@ -85,10 +88,13 @@ namespace Pizza_StoreV8.PizzaCatalogs
             }
         }
 
-        // more performant solution
+        // A more performant solution
         public void DeletePizza(Pizza pizza)
         {
-            pizzas.Remove(pizza.Id);
+            if (pizza != null)
+            {
+                pizzas.Remove(pizza.Id);
+            }          
         }
 
         //less performant solution
