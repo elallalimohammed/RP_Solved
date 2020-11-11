@@ -1,0 +1,23 @@
+﻿@page "{id}"
+@model Book_StoreV10.OrderModel
+@{
+    ViewData["Title"] = "Order";
+}
+
+<h4>Hello @Model.Student.Name: Thank you for placing this order on @DateTime.Now</h4>
+<h5> Your order contains:</h5>
+@foreach (var item in Model.cartItems)
+{
+    <tr>
+        <td class="text-left"> Name: @item.Title</td>
+        <td class="text-right">
+            Total Price :
+            @((item.Price).ToString("c"))
+        </td>
+    </tr>
+    <br />
+}
+
+<p>We'll ship your items as soon as possible.</p>
+
+
